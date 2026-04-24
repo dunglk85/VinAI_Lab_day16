@@ -206,7 +206,7 @@ resource "aws_iam_instance_profile" "ai_profile" {
 
 resource "aws_instance" "gpu_node" {
   ami                    = "ami-0102a36b3e9d5e4df"
-  instance_type          = "r5.2xlarge" 
+  instance_type          = "t3.micro" 
   subnet_id              = aws_subnet.private[0].id
   vpc_security_group_ids = [aws_security_group.gpu_sg.id]
   key_name               = aws_key_pair.lab_key.key_name
